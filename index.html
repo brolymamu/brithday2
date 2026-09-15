@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Poojaa Garuuu ❤️</title>
+
+<style>
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff5f8;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+
+/* =========================
+   DNA CONTAINER
+========================= */
+
+.dna {
+    position: relative;
+    width: 420px;
+    height: 700px;
+    perspective: 1200px;
+}
+
+
+/* =========================
+   DNA HELIX
+========================= */
+
+.helix {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    animation: rotateDNA 12s linear infinite;
+}
+
+
+/* =========================
+   DNA ITEMS
+========================= */
+
+.item {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 350px;
+    height: 45px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    transform-style: preserve-3d;
+
+    transform:
+        translate(-50%, -50%)
+        rotateY(var(--angle))
+        translateZ(150px)
+        translateY(var(--y));
+}
+
+
+/* =========================
+   TEXT
+========================= */
+
+.word {
+    font-size: 19px;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    color: #e91e63;
+
+    white-space: nowrap;
+
+    text-shadow:
+        0 0 8px rgba(233, 30, 99, 0.4);
+}
+
+
+/* =========================
+   HEART
+========================= */
+
+.heart {
+    font-size: 25px;
+
+    filter:
+        drop-shadow(0 0 6px rgba(255, 0, 80, 0.4));
+}
+
+
+/* =========================
+   PHOTOS INSIDE DNA
+========================= */
+
+.photo {
+    width: 65px;
+    height: 80px;
+
+    padding: 4px;
+
+    background: white;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 0 12px rgba(255, 80, 130, 0.5);
+
+    overflow: hidden;
+
+    transform-style: preserve-3d;
+}
+
+
+.photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 7px;
+}
+
+
+/* =========================
+   PHOTO FLIP
+========================= */
+
+.photo img {
+    animation: photoFlip 4s ease-in-out infinite;
+}
+
+
+@keyframes photoFlip {
+
+    0% {
+        transform: rotateY(0deg);
+    }
+
+    50% {
+        transform: rotateY(180deg);
+    }
+
+    100% {
+        transform: rotateY(360deg);
+    }
+
+}
+
+
+/* =========================
+   DNA ROTATION
+========================= */
+
+@keyframes rotateDNA {
+
+    from {
+        transform: rotateY(0deg);
+    }
+
+    to {
+        transform: rotateY(360deg);
+    }
+
+}
+
+
+/* =========================
+   DNA POSITIONS
+========================= */
+
+.item:nth-child(1) {
+    --y: -300px;
+    --angle: 0deg;
+}
+
+.item:nth-child(2) {
+    --y: -250px;
+    --angle: 45deg;
+}
+
+.item:nth-child(3) {
+    --y: -200px;
+    --angle: 90deg;
+}
+
+.item:nth-child(4) {
+    --y: -150px;
+    --angle: 135deg;
+}
+
+.item:nth-child(5) {
+    --y: -100px;
+    --angle: 180deg;
+}
+
+.item:nth-child(6) {
+    --y: -50px;
+    --angle: 225deg;
+}
+
+.item:nth-child(7) {
+    --y: 0px;
+    --angle: 270deg;
+}
+
+.item:nth-child(8) {
+    --y: 50px;
+    --angle: 315deg;
+}
+
+.item:nth-child(9) {
+    --y: 100px;
+    --angle: 360deg;
+}
+
+.item:nth-child(10) {
+    --y: 150px;
+    --angle: 405deg;
+}
+
+.item:nth-child(11) {
+    --y: 200px;
+    --angle: 450deg;
+}
+
+.item:nth-child(12) {
+    --y: 250px;
+    --angle: 495deg;
+}
+
+.item:nth-child(13) {
+    --y: 300px;
+    --angle: 540deg;
+}
+
+
+/* =========================
+   SPECIAL BIRTHDAY MESSAGE
+========================= */
+
+.birthday {
+    font-size: 20px;
+
+    font-weight: bold;
+
+    color: #ff2f75;
+
+    letter-spacing: 1px;
+
+    white-space: nowrap;
+
+    text-shadow:
+        0 0 8px #ff9fbd,
+        0 0 15px #ffd0dd;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 500px) {
+
+    .dna {
+        transform: scale(0.78);
+    }
+
+}
+
+/* PASSWORD SCREEN */
+
+#passwordScreen {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(135deg, #fff0f5, #ffe4ec);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+.password-box {
+    width: 90%;
+    max-width: 420px;
+    padding: 40px 25px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 25px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.password-box .heart {
+    font-size: 55px;
+    margin-bottom: 10px;
+    animation: heartbeat 1.5s infinite;
+}
+
+.password-box h1 {
+    margin: 10px 0;
+    color: #d6336c;
+}
+
+.password-box p {
+    color: #777;
+}
+
+#passwordInput {
+    width: 80%;
+    padding: 14px;
+    margin: 15px 0;
+    border: 2px solid #ffc1d6;
+    border-radius: 30px;
+    outline: none;
+    text-align: center;
+    font-size: 16px;
+}
+
+.password-box button {
+    padding: 14px 25px;
+    border: none;
+    border-radius: 30px;
+    background: #d6336c;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.password-box button:hover {
+    transform: scale(1.05);
+}
+
+#wrongPassword {
+    color: #e63946;
+    font-size: 14px;
+    min-height: 20px;
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+.password-hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<!-- PASSWORD SCREEN -->
+<div id="passwordScreen">
+    <div class="password-box">
+        <div class="heart">❤️</div>
+
+        <h1>A Little Surprise For You</h1>
+        <p>Enter the secret password to continue 💕</p>
+
+        <input type="password" id="passwordInput" placeholder="Enter password">
+
+        <button onclick="checkPassword()">OPEN MY SURPRISE 💕</button>
+
+        <p id="wrongPassword"></p>
+    </div>
+</div>
+
+
+<!-- =========================
+     DNA
+========================= -->
+
+<div class="dna">
+
+<div class="helix">
+
+
+<!-- ROW 1 -->
+
+<div class="item">
+
+    <div class="photo">
+        <img src="photo1.jpg">
+    </div>
+
+    <span class="birthday">
+        ❤️ HAPPY ❤️
+    </span>
+
+</div>
+
+
+<!-- ROW 2 -->
+
+<div class="item">
+
+    <span class="word">
+        BIRTHDAY
+    </span>
+
+    <div class="photo">
+        <img src="photo2.jpg">
+    </div>
+
+</div>
+
+
+<!-- ROW 3 -->
+
+<div class="item">
+
+    <div class="photo">
+        <img src="photo3.jpg">
+    </div>
+
+    <span class="birthday">
+        ❤️ POOJAA ❤️
+    </span>
+
+</div>
+
+
+<!-- ROW 4 -->
+
+<div class="item">
+
+    <span class="word">
+        BIRTHDAY
+    </span>
+
+    <div class="photo">
+        <img src="photo4.jpg">
+    </div>
+
+</div>
+
+
+<!-- ROW 5 -->
+
+<div class="item">
+
+    <div class="photo">
+        <img src="photo5.jpg">
+    </div>
+
+    <span class="birthday">
+        ❤️ GARUUU ❤️
+    </span>
+
+</div>
+
+
+<!-- ROW 6 -->
+
+<div class="item">
+
+    <span class="word">
+        HAPPY
+    </span>
+
+    <div class="photo">
+        <img src="photo6.jpg">
+    </div>
+
+</div>
+
+
+<!-- ROW 7 -->
+
+<div class="item">
+
+    <div class="photo">
+        <img src="photo7.jpg">
+    </div>
+
+    <span class="birthday">
+        ❤️ HAPPY ❤️
+    </span>
+
+</div>
+
+
+<!-- ROW 8 -->
+
+<div class="item">
+
+    <span class="word">
+        BIRTHDAY
+    </span>
+
+    <div class="photo">
+        <img src="photo8.jpg">
+    </div>
+
+</div>
+
+
+<!-- ROW 9 -->
+
+<div class="item">
+
+    <div class="photo">
+        <img src="photo9.jpg">
+    </div>
+
+    <span class="birthday">
+        ❤️ POOJAA ❤️
+    </span>
+
+</div>
+
+
+<!-- ROW 10 -->
+
+<div class="item">
+
+    <span class="word">
+        GARUUU
+    </span>
+
+    <div class="photo">
+        <img src="photo10.jpg">
+    </div>
+
+</div>
+
+
+<!-- ROW 11 -->
+
+<div class="item">
+
+    <div class="photo">
+        <img src="photo11.jpg">
+    </div>
+
+    <span class="birthday">
+        ❤️ HAPPY ❤️
+    </span>
+
+</div>
+
+
+<!-- ROW 12 -->
+
+<div class="item">
+
+    <span class="word">
+        BIRTHDAY
+    </span>
+
+    <div class="photo">
+        <img src="photo12.jpg">
+    </div>
+
+</div>
+
+
+<!-- ROW 13 -->
+
+<div class="item">
+
+    <div class="photo">
+        <img src="photo13.jpg">
+    </div>
+
+    <span class="birthday">
+        ❤️ POOJAA GARUUU ❤️
+    </span>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<!-- =========================
+     🎵 BACKGROUND MUSIC
+========================= -->
+
+<audio id="birthdayMusic" loop autoplay>
+
+    <source
+        src="song.mp3"
+        type="audio/mpeg">
+
+</audio>
+
+
+<script>
+
+const music = document.getElementById("birthdayMusic");
+
+music.volume = 0.7;
+
+
+/* =========================
+   TRY TO START MUSIC
+========================= */
+
+window.addEventListener("load", function() {
+
+    music.play().catch(function() {
+
+        console.log(
+            "Autoplay blocked. Waiting for user interaction..."
+        );
+
+    });
+
+});
+
+
+/* =========================
+   FALLBACK:
+   FIRST CLICK / TAP STARTS MUSIC
+========================= */
+
+function startMusic() {
+
+    if (music.paused) {
+
+        music.play().catch(function(error) {
+
+            console.log("Music could not start:", error);
+
+        });
+
+    }
+
+}
+
+
+/* Start when she first interacts with the website */
+
+document.addEventListener(
+    "click",
+    startMusic,
+    { once: true }
+);
+
+document.addEventListener(
+    "touchstart",
+    startMusic,
+    { once: true }
+);
+
+</script>
+
+<script>
+const SECRET_PASSWORD = "salanghaeyo";
+
+function checkPassword() {
+    const enteredPassword = document.getElementById("passwordInput").value;
+    const passwordScreen = document.getElementById("passwordScreen");
+    const wrongPassword = document.getElementById("wrongPassword");
+
+    if (enteredPassword === SECRET_PASSWORD) {
+
+        passwordScreen.classList.add("password-hidden");
+
+        setTimeout(() => {
+            passwordScreen.style.display = "none";
+        }, 800);
+
+    } else {
+        wrongPassword.textContent = "Wrong password ❤️ Try again.";
+
+        document.getElementById("passwordInput").value = "";
+    }
+}
+</script>
+
+
+</body>
+</html>
+```
